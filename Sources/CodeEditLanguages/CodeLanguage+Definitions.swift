@@ -69,7 +69,10 @@ public extension CodeLanguage {
     static let bash: CodeLanguage = .init(
         id: .bash,
         tsName: "bash",
-        extensions: ["sh", "bash"],
+        extensions: [
+            "sh", "bash", "zsh", "ksh",
+            ".bashrc", ".bash_profile", ".zshrc", ".zprofile", ".zshenv", ".profile"
+        ],
         lineCommentString: "#",
         rangeCommentStrings: (":'", "'")
     )
@@ -87,7 +90,7 @@ public extension CodeLanguage {
     static let cpp: CodeLanguage = .init(
         id: .cpp,
         tsName: "cpp",
-        extensions: ["cc", "cpp", "c++", "hpp", "h"],
+        extensions: ["cc", "cpp", "c++", "cxx", "hpp", "hh", "hxx", "h++", "ipp", "tpp", "h"],
         lineCommentString: CodeLanguage.c.lineCommentString,
         rangeCommentStrings: CodeLanguage.c.rangeCommentStrings,
         documentationCommentStrings: [.pair(("/**", "*/"))],
@@ -99,7 +102,7 @@ public extension CodeLanguage {
     static let cSharp: CodeLanguage = .init(
         id: .cSharp,
         tsName: "c-sharp",
-        extensions: ["cs"],
+        extensions: ["cs", "csx"],
         lineCommentString: "//",
         rangeCommentStrings: ("/*", "*/")
     )
@@ -126,7 +129,7 @@ public extension CodeLanguage {
     static let dockerfile: CodeLanguage = .init(
         id: .dockerfile,
         tsName: "dockerfile",
-        extensions: ["Dockerfile"],
+        extensions: ["Dockerfile", "dockerfile", "Containerfile", "containerfile"],
         lineCommentString: "#",
         rangeCommentStrings: ("", "")
     )
@@ -214,7 +217,7 @@ public extension CodeLanguage {
     static let json: CodeLanguage = .init(
         id: .json,
         tsName: "json",
-        extensions: ["json"],
+        extensions: ["json", "jsonc", "json5"],
         lineCommentString: "//",
         rangeCommentStrings: ("/*", "*/")
     )
@@ -330,7 +333,7 @@ public extension CodeLanguage {
     static let python: CodeLanguage = .init(
         id: .python,
         tsName: "python",
-        extensions: ["py"],
+        extensions: ["py", "pyi", "pyw"],
         lineCommentString: "#",
         rangeCommentStrings: ("", ""),
         documentationCommentStrings: [.pair(("\"\"\"", "\"\"\""))],
@@ -350,7 +353,7 @@ public extension CodeLanguage {
     static let ruby: CodeLanguage = .init(
         id: .ruby,
         tsName: "ruby",
-        extensions: ["rb"],
+        extensions: ["rb", "rake", "gemspec", "ru", "Gemfile", "Rakefile", "Podfile", "Brewfile"],
         lineCommentString: "#",
         rangeCommentStrings: ("=begin", "=end")
     )
